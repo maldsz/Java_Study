@@ -13,10 +13,10 @@ public class ArrayListStudy {
     private boolean isWorkerInList(String worker){
         for(String w : workersList){
             if(worker.equalsIgnoreCase(w)){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     private String getWorkerByIndex(int index){
