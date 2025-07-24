@@ -24,7 +24,13 @@ public class ArrayListStudy {
     }
 
     public static void main(String[] args){
+        ArrayListStudy workersList1 = new ArrayListStudy();
+        workersList1.addWorkerInList("Marco");
+        workersList1.addWorkerInList("Ronelson");
+        workersList1.addWorkerInList("Martha");
 
+        System.out.println(workersList1.isWorkerInList("Ronelson"));
+        System.out.println(workersList1.isWorkerInList("Belinha"));
     }
 
 }
