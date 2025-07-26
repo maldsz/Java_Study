@@ -4,17 +4,11 @@ import java.util.List;
 
 public class StreamsStudy {
 
-    private String name;
     private static List<String> workersList = new ArrayList<>();
 
-    @Override
-    public String toString(){
-        return name;
-    }
-
-    private void PrintWorkersInList(ArrayList workers){
+    private void printWorkersInList(List<String> workers){
         for(int i = 0; i < workers.size(); i++){
-            System.out.println(workers.toString());
+            System.out.println(workers.get(i).toString());
         }
     }
 
@@ -33,7 +27,14 @@ public class StreamsStudy {
         return false;
     }
 
-    private List getWorkers(){
+    private void printWorkersStartingWithLetter(List<String> workers, String letter){
+        List<String> worksStartsWithA = workers;
+        worksStartsWithA.stream()
+        .filter(w -> w.startsWith(letter))
+        .forEach(System.out::println);
+    }
+
+    private List<String> getWorkers(){
         return workersList;
     }
 
@@ -47,12 +48,11 @@ public class StreamsStudy {
         workers.addWorkerInList("Adama Traore");
         workers.addWorkerInList("Adeyemi");
 
-        List<String> workersCopy = new ArrayList<>();
-        workersCopy = workers.getWorkers();
+        List<String> workersCopy = workers.getWorkers();
+
+        workers.printWorkersInList(workersCopy);
+        workers.printWorkersStartingWithLetter(workersCopy, "A");
         
-        List<String> worksStartsWithA = workersCopy;
-        worksStartsWithA.stream().filter(w -> w.startsWith("A")).map(String::toUpperCase)
-        .forEach(System.out::println);
     }
 
 }
