@@ -7,9 +7,8 @@ public class StreamsStudy {
     private static List<String> workersList = new ArrayList<>();
 
     private void printWorkersInList(List<String> workers){
-        for(int i = 0; i < workers.size(); i++){
-            System.out.println(workers.get(i).toString());
-        }
+        workers.stream()
+        .forEach(System.out::println);
     }
 
     private void addWorkerInList(String worker){
