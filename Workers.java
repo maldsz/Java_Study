@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Workers{
 
     private static int workerId;
@@ -5,13 +8,19 @@ public class Workers{
     private String cpf;
     private String companyName;
     private double salary;
+    private static List<Workers> workersList = new ArrayList<>();
 
-    public Workers(int workerId, String name, String cpf, String companyName, double salary){
+    public Workers(String name, String cpf, String companyName, double salary){
         workerId++;
         this.name = name;
         this.cpf = cpf;
         this.companyName = companyName;
         this.salary = salary;
+        workersList.add(this);
+    }
+
+    public String toString(){
+        return "Name: " + name + "Cpf: " + cpf + "Company: " + companyName + "Salary: " + salary;  
     }
 
     public int getWorkerId(){
