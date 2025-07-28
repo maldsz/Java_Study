@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Worker{
 
-    private int countId;
+    private static int countId = 0;
     private static int workerId;
     private String name;
     private String cpf;
