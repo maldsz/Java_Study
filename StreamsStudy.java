@@ -1,6 +1,9 @@
 import java.util.stream.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 public class StreamsStudy {
 
@@ -37,21 +40,30 @@ public class StreamsStudy {
         return workersList;
     }
 
+    private Set<String> getWorkersWithoutRepetition(List<String> workers){
+        Set<String> uniqueWorkers = new HashSet<>(workers);
+        return uniqueWorkers;
+    }
+
     public static void main(String[] args) {
         StreamsStudy workers = new StreamsStudy();
         
         workers.addWorkerInList("Albert Einsten");
         workers.addWorkerInList("Isaac Newton");
+        workers.addWorkerInList("Robert Lewandowski");
+        workers.addWorkerInList("Cristiano Ronaldo");
         workers.addWorkerInList("Cristiano Ronaldo");
         workers.addWorkerInList("Robert Lewandowski");
         workers.addWorkerInList("Adama Traore");
         workers.addWorkerInList("Adeyemi");
+        workers.addWorkerInList("Lionel Messi");
 
         List<String> workersCopy = workers.getWorkers();
 
-        workers.printWorkersInList(workersCopy);
-        workers.printWorkersStartingWithLetter(workersCopy, "A");
-        
+        // workers.printWorkersInList(workersCopy);
+        // workers.printWorkersStartingWithLetter(workersCopy, "A");
+        System.out.println(workers.getWorkersWithoutRepetition(workersCopy));
+
     }
 
 }
