@@ -3,6 +3,7 @@ import java.util.Map;
 
 public class Worker{
 
+    private int countId;
     private static int workerId;
     private String name;
     private String cpf;
@@ -11,7 +12,7 @@ public class Worker{
     private static Map<Integer, String> workersIdNameList = new HashMap<>();
 
     public Worker(String name, String cpf, String companyName, double salary){
-        workerId++;
+        workerId = ++ countId;
         this.name = name;
         this.cpf = cpf;
         this.companyName = companyName;
@@ -53,5 +54,5 @@ public class Worker{
         }
         return worker;
     }
-    
+
 }
