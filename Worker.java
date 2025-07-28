@@ -1,30 +1,26 @@
-import java.util.List;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Workers{
+public class Worker{
 
     private static int workerId;
     private String name;
     private String cpf;
     private String companyName;
     private double salary;
-    private static List<Workers> workersList = new ArrayList<>();
+    private static Map<Integer, String> workersIdNameList = new HashMap<>();
 
-    public Workers(String name, String cpf, String companyName, double salary){
+    public Worker(String name, String cpf, String companyName, double salary){
         workerId++;
         this.name = name;
         this.cpf = cpf;
         this.companyName = companyName;
         this.salary = salary;
-        workersList.add(this);
+        workersIdNameList.put(workerId, this.name);
     }
 
     public String toString(){
         return "Name: " + name + "Cpf: " + cpf + "Company: " + companyName + "Salary: " + salary;  
-    }
-
-    public int getWorkerId(){
-        return workerId;
     }
     
     public String getName(){
@@ -43,7 +39,19 @@ public class Workers{
         return this.salary;
     }
 
-    public record RecordWorkers(int workerId, String name) {
-        //
+    public boolean isWorkerInList(int id){
+        return workersIdNameList.containsKey(id);
+        
     }
+
+    public Map<Integer, String> getWorkerFromId(int id){
+        Map<Integer, String> worker = new HashMap<>();
+        String workerName;
+        if(isWorkerInList(id)){
+            workerName = workersIdNameList.get(id);
+            worker.put(id, workerName);
+        }
+        return worker;
+    }
+    
 }
