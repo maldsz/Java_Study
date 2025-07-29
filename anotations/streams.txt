@@ -1,0 +1,42 @@
+Streams are a pipeline that process data from a source. 
+You can make operations in strams without modifying the original data source.
+For example, filtering a stream creates a new stream and it doesn't remove elements 
+from the original source collection.
+
+In this point, it's important to know what is a collection in Java.
+Collections refers to a framework that provides an architecture for storing, 
+manipulating and retrieving groups of objects. It's located in the java.util package.
+
+"import java.util.Collection"
+
+Collections = Data Structure
+It bases on complexity and algorithms that provides the performance
+
+Stream -> doesn't store elements, they are a pipeline that process data from a source.
+Pipeline = Source, Intermediate Operations and Terminal Operations
+    Source is the origin of the element, like a Collection, Array
+    Intermediate Operations transforms a stream into another stream, like filter(), 
+    map(), sorted()
+    Terminal Operations are operations that produces a result or a side effect, 
+    initiating the computation like forEach(), collect(), count()
+
+A Stream is consumable, and to re-process you need to generate a new stream from the source.
+
+-----------------------x-----------------------
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamStudy {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+
+        List<String> namesStartingWithAInUpperCase = names.stream()
+                                                .filter(name -> name.startsWith("A"))
+                                                .map(String::toUpperCase)        
+                                                .collect(Collectors.toList());      
+
+        System.out.println(namesStartingWithAInUpperCase); 
+    }
+}
