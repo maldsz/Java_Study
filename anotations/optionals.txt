@@ -1,0 +1,10 @@
+An Optional in java is a container to hold a non-null value or represent the absence
+of a value. It means that helps to avoid NullPointerException, by handling cases where
+a value might not be there.
+
+Instead of returning null directly, the methods can return an Optional to signal that 
+a value might be absent, forcing you to handle both the presence and absence of the value.
+
+There are many methods like isPresent(), get(), orElse(), orElseGet(), ifPresent()...
+
+"import java.util.Optional"
