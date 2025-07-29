@@ -1,0 +1,20 @@
+records is a feature that makes the implementation of a simple class in Java way easier
+
+you don't have to write all the code if your class only has basics methods. It creates
+get methods for all the variables, hashCode() method, a toString(), a equals() and even
+a basic constructor.
+
+you can overwrite other methods inside the record class, but you have to be concise that
+a record class is immutable, so once it's created, its state cannot be changed. 
+All components are implicity 'final'.
+
+to use the getters, you dont need to use for e.g. getName(), you may use name() only.
+
+how to declare a record class -> 
+public record Person(String name, int age) {}
+
+// inside the '{}' you can overwrite the code of the record.
+
+also, you can change the constructor for example
+
+records reduces Boilerplate
