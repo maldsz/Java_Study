@@ -7,4 +7,15 @@ a value might be absent, forcing you to handle both the presence and absence of 
 
 There are many methods like isPresent(), get(), orElse(), orElseGet(), ifPresent()...
 
+<<<<<<< HEAD
 "import java.util.Optional"
+=======
+"import java.util.Optional"
+
+isPresent() -> checks if the value is present inside the Optional object.
+Optional.empty() -> returns an empty Optional instance
+Optional.of(variable) -> creates an optional instance and requires a non-null argument
+you need to pass the variable that needs to cointain a value diferent than null
+Option.ofNullable(variable) -> ables use to pass a null value, but you might need 
+to treat it after
+>>>>>>> Optional
