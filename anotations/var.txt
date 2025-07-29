@@ -1,0 +1,26 @@
+var was introduced in Java 10 version
+What a var does is to "simplify" the reading, 'cause a good code is a code that
+humans can read, not only the machine.
+
+In this case, a 'var' is a way to replace the type of the object, e.g. int, String,
+boolean, or even objects, when it's cases that the class has a big name and to make 
+it simple to read and comprehend/understand the declaration.
+
+As though, java is known for being a strong typed language, robust, We have this type
+that we call var to replace that as I said.
+
+We also call that LVTI "Local Variable Type Inference", so it's a variable that allow
+us to use in local code. 
+// Without LVTI -> String message = "My name is Marco";
+// Using LVTI->    var message = "My name is Marco";
+
+You cannot use var without initializer, so we can't do:
+// var name;
+Instead of that, we should assign the value, like:
+// var name = "Marco";
+
+With LVTI the code is cleaner, consice and easier to read, as well as facilitate 
+refactoring.
+
+Although useful, we need to be carefu. If it's not easy to identify the type, is better
+to explicity specify the type.
