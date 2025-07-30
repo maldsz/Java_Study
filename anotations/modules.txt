@@ -1,0 +1,49 @@
+in Java, a module is a set of packages that declares which of them form an API 
+accessible to other modules and which are internal and encapsulated.
+
+it's similiar how a class defines the visibility of its members
+
+it's a level of abstraction above packages, known as JPMS "Java Platform Module System"
+
+for example, if i have some classes that i may have to export to use in other parts of
+the code, it can be used a modele ->
+my project path:    my.math.module/src/mymath/module-info.java
+                                            /operations/Addition.java
+                                                       /Subtraction.java
+                                                       /Multiplication.java
+                                                       /Division.Java
+
+on module-info.java you define the module name and what it exports, what are the 
+dependencies, what it offers
+
+keyworkds:
+exports -> used in a module declaration to specify which packages are available 
+to other modules;
+
+module -> declares a module;
+
+open -> indicates that all classes in a package are accessible via reflection 
+by other modules;
+
+opens -> used to open a specific package for reflection to other modules;
+
+provides -> used to declare that a module provides an implementation of a service 
+interface;
+
+requires -> used in a module declaration to specify that the module depends on 
+another module;
+
+to -> used with the opens directive to specify which module is allowed to 
+reflectively access the package;
+
+transitive -> used with the requires directive to indicate that a module not only 
+requires another module but also makes that module's dependencies available to 
+modules that depend on it;
+
+uses -> used in a module to declare that the module is using a service 
+(i.e. it will consume a service provided by other modules);
+
+with -> used with the provides directive to specify which implementation of a 
+service is provided by the module;
+
+** ask more about it
